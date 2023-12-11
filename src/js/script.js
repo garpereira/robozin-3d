@@ -71,7 +71,7 @@ let animationIndex = 0; // parado
 
 const loaderFBX = new FBXLoader();
 const loader = new GLTFLoader();
-loader.load('../../assets/humanoide/scene.gltf', function (gltf) {
+loader.load('/robozin-3d/assets/humanoide/scene.gltf', function (gltf) {
   robo = gltf.scene;
   robo.scale.set(5, 5, 5);
   scene.add(robo);
