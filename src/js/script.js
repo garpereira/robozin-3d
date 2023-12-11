@@ -2,12 +2,6 @@ import * as THREE from 'three';
 
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader';
-import {FBXLoader} from 'three/addons/loaders/FBXLoader';
-
-
-// import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
-// import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
-// import {FBXLoader} from 'three/examples/jsm/loaders/FBXLoader';
 
 // Scene
 const scene = new THREE.Scene();
@@ -69,7 +63,6 @@ let updateAnimation = 0;
 let speed = 0;
 let animationIndex = 0; // parado
 
-const loaderFBX = new FBXLoader();
 const loader = new GLTFLoader();
 loader.load('../../assets/humanoide/scene.gltf', function (gltf) {
   robo = gltf.scene;
@@ -141,7 +134,7 @@ window.addEventListener('keyup', (event) => {
     keysState[event.key] = false;
 
     if (event.key === 'ArrowUp') {
-        updateAnimation = 0.1;
+        updateAnimation = 0.0;
         speed = 0;
     }
 });
@@ -153,9 +146,9 @@ function isKeyPressed(key) {
 function update() {
     if (isKeyPressed('ArrowUp')) {
         updateAnimation = 0.1;
-        speed = 0.03;
+        speed = 0.0003;
     } else {
-        updateAnimation = 0.1;
+        updateAnimation = 0.0;
         speed = 0;
     }
     requestAnimationFrame(update);
